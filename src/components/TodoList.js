@@ -1,4 +1,3 @@
-// src/components/TodoList.js
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addTodo, removeTodo } from '../actions/todoActions';
