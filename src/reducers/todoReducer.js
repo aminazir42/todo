@@ -1,23 +1,17 @@
-import { ADD_TODO, REMOVE_TODO } from '../actions/todoActions';
+import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  todos: [],
-};
+const todoSlice = createSlice({
+  name: 'todos',
+  initialState: [],
+  reducers: {
+    addTodo: (state, action) => {
+      state.push(action.payload);
+    },
+    removeTodo: (state, action) => {
+      return state.filter((_, index) => index !== action.payload);
+    },
+  },
+});
 
-const todoReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case ADD_TODO:
-      return {
-        ...state,
-        todos: [...state.todos, action.payload],
-      };
-    case REMOVE_TODO:
-      return {
-        ...state,
-        todos: state.todos.filter((_, index) => index !== action.payload),
-      };
-    default:
-      return state;
-  }
-};
-export default todoReducer;
+export const { addTodo, removeTodo } = todoSlice.actions;
+export default todoSlice.reducer;
