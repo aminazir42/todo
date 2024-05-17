@@ -1,7 +1,6 @@
-// src/components/TodoList.js
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addTodo, removeTodo } from '../reducers/todoReducer'; // Updated import
+import { addTodo, removeTodo } from '../reducers/todoReducer'; 
 import { Box, Button, Input, List, ListItem, IconButton, Heading } from '@chakra-ui/react';
 import { DeleteIcon } from '@chakra-ui/icons';
 
