@@ -5,7 +5,7 @@ const SplashScreen = () => {
   return (
     <Center height="100vh" bg="teal.500">
       <Box>
-        <Image src="logo.png" alt="Logo" boxSize="200px" />
+        <Image src="logo.png" alt="Logo" boxSize="250px" />
       </Box>
     </Center>
   );
