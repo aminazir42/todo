@@ -1,12 +1,13 @@
-// src/components/TodoList.js
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addTodo, removeTodo, toggleTodo } from '../reducers/todoReducer';
-import { Box, Button, Input, List, ListItem, IconButton, Heading, Checkbox, Flex } from '@chakra-ui/react';
+import { Box, Button, Input, List, ListItem, IconButton, Heading, Checkbox, Flex, Image } from '@chakra-ui/react';
 import { DeleteIcon } from '@chakra-ui/icons';
 import NavBar from './NavBar';
 import WeeklyCalendar from './WeeklyCalendar';
-import { format } from 'date-fns'; // Ensure format is imported from date-fns
+import { format } from 'date-fns'; 
+
+const logoUrl = 'logo.png'; 
 
 const TodoList = ({ todos, addTodo, removeTodo, toggleTodo }) => {
   const [todo, setTodo] = useState('');
@@ -32,6 +33,11 @@ const TodoList = ({ todos, addTodo, removeTodo, toggleTodo }) => {
       <NavBar />
       <Flex direction="column" align="center" p={5}>
         <WeeklyCalendar onSelectDay={handleSelectDay} />
+        {selectedDay && (
+          <Box mt={4}>
+            <Image src={logoUrl} alt="Logo" boxSize="100px" />
+          </Box>
+        )}
         <Box mt={8} p="5" maxW="500px" width="100%">
           <Heading mb="4">Todo List</Heading>
           <Box display="flex" mb="4">

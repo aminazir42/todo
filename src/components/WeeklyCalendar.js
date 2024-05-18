@@ -1,4 +1,4 @@
-// src/components/WeeklyCalendar.js
+
 import React, { useState } from 'react';
 import { Box, SimpleGrid, Text, useColorModeValue, Flex } from '@chakra-ui/react';
 import { format, addDays, startOfWeek, isToday } from 'date-fns';
